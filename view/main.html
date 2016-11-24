@@ -1,1 +1,19 @@
-
+<div class="image_wrap">
+	<div class="wrap_form">
+		<label for="scrollOn">Allow Scroll</label>
+		<input type="checkbox" name="scrollOn" ng-model="alowd">
+		<input type="text" ng-model="number" placeholder="Number add to list" ng-init="3">
+		<button type="button" ng-click="addToList()" ng-if="!alowd">Add to List</button>
+	</div>
+	<br>
+	<div class="outer">
+		<div class="image" ng-repeat="image in images">
+			<a href="">
+				<img ng-src="{{image.url}}" class="image_pic">
+			</a>
+			<a href="" ng-click="delete($index)">
+				<span class="delete">X</span>
+			</a>
+		</div>
+	</div>
+</div>
